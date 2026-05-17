@@ -16,7 +16,7 @@ from PIL import Image
 # PAGE CONFIGURATION
 # ══════════════════════════════════════════════════════════════
 st.set_page_config(
-    page_title="AI Image Editor",
+    page_title="FAke_Gen AI",
     page_icon="🎭",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -126,13 +126,13 @@ with st.sidebar:
     examples = [
         "make me smile",
         "make me look older",
-        "add a beard",
+        "make it cyberpunk style",
         "add a tattoo on my arm",
         "change background to beach",
-        "make it look like a painting",
+        "make it oil painting",
         "remove the glasses",
         "make it night time",
-        "change hair to blonde",
+        "make it anime style",
         "make it vintage",
     ]
     for ex in examples:
@@ -149,8 +149,8 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════
 # MAIN PAGE
 # ══════════════════════════════════════════════════════════════
-st.markdown("# 🎭 AI Image Editor")
-st.markdown("### Upload any image. Describe your change. Get the result.")
+st.markdown("# 🎭 Fake_Gen AI")
+st.markdown("### Upload an image. Describe your change(s). Get the result.")
 st.markdown("---")
 
 # ── Upload + Instruction ──────────────────────────────────────
@@ -229,7 +229,7 @@ if generate_clicked:
     elif health is None:
         st.error("Backend is offline. Start it with: python backend/app.py")
     else:
-        with st.spinner("Generating … this may take 5–15 seconds"):
+        with st.spinner("Generating … this may take a few seconds"):
             try:
                 response = call_generate(original_image, instruction)
 
